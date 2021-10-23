@@ -39,7 +39,7 @@ Module.register("RejseplanenModule", {
 	getData: function() {
 		var self = this;
 
-		var urlApi = "https://jsonplaceholder.typicode.com/posts/1";
+		var urlApi = "http://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9512079&originCoordY=56178240&originCoordName=Hjem&destCoordX=9550145&destCoordY=56166726&destCoordName=College360&format=json";
 		var retry = true;
 
 		var dataRequest = new XMLHttpRequest();
