@@ -8,7 +8,7 @@
  * and https://docs.magicmirror.builders/modules/configuration.html
  */
 let config = {
-	address: "localhost", 	// Address to listen on, can be:
+	address: "::", 	// Address to listen on, can be:
 							// - "localhost", "127.0.0.1", "::1" to listen on loopback interface
 							// - another specific IPv4/6 to listen on a specific interface
 							// - "0.0.0.0", "::" to listen on any interface
@@ -16,7 +16,7 @@ let config = {
 	port: 8080,
 	basePath: "/", 	// The URL path where MagicMirror is hosted. If you are using a Reverse proxy
 					// you must set the sub path here. basePath must end with a /
-	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1"], 	// Set [] to allow all IP addresses
+	ipWhitelist: ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.1.1/120", "192.168.1.1/24"], 	// Set [] to allow all IP addresses
 															// or add a specific IPv4 of 192.168.1.5 :
 															// ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.1.5"],
 															// or IPv4 range of 192.168.3.0 --> 192.168.3.15 use CIDR format :
@@ -90,7 +90,7 @@ let config = {
 		},
 		{
 			module: "newsfeed",
-			position: "bottom_bar",
+			position: "bottom_center",
 			config: {
 				feeds: [
 					{
@@ -103,6 +103,24 @@ let config = {
 				broadcastNewsFeeds: true,
 				broadcastNewsUpdates: true
 			}
+		},
+		{
+		  	module: "MMM-NowPlayingOnSpotify",
+		  	position: "top_right",
+
+		  	config: {
+				showCoverArt: false,
+				clientID: "64c94fd8664d4ca684734ce35c867dd1",
+				clientSecret: "a95d40dd692740f98bacd4c40ef37c59",
+				accessToken: "BQAPX-C03vYmqh1T5fGewN8vWZU5bZ_hXm5Zp7P3B3uTndZaxueoFl5HcS-6y5bp7cbNfU2DMzOkEvVX_sM20p7GjpZDueIW0TMe8Vz241-nGKtZucsKn2HIEWzuA6k6o9YW7B14RO85hK1NJgo",
+				refreshToken: "AQDFRC6Vz-PUGxOhGsXGIkDFzeyWohjuO1QtfM_oPUZGppCvSEhKiovNRck0Xl6sn0KGimccfLb_SEi7_9svUw2vHdGniS57A0J81x3i-LMBpIq5cpECaVx4hu688EIlPZ0"
+		  	}
+		},
+		{
+    		module: 'MMM-Remote-Control',
+    		config: {
+        		apiKey: 'string'
+    		}
 		},
 	]
 };
