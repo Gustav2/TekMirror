@@ -10,9 +10,7 @@ cd ..
 To install MMM-NowPlayingOnSpotify:
 
 ```bash
-cd modules
-git clone https://github.com/raywo/MMM-NowPlayingOnSpotify.git
-cd MMM-NowPlayingOnSpotify
+cd modules/MMM-NowPlayingOnSpotify
 npm install
 ```
 
