@@ -1,0 +1,18 @@
+{
+  "name": "RejseplanenModule",
+  "version": "1.0.0",
+  "description": "Todo: Insert description here!",
+  "main": "RejseplanenModule.js",
+  "author": "gustav2",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-eslint": "latest",
+    "grunt-jsonlint": "latest",
+    "grunt-markdownlint": "^1.0.13",
+    "grunt-stylelint": "latest",
+    "grunt-yamllint": "latest",
+    "stylelint-config-standard": "latest",
+    "time-grunt": "latest"
+  }
+}
