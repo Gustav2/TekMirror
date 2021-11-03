@@ -54,6 +54,7 @@ class NPOS_DomBuilder {
 
   getIconImage(className) {
     return this.getImage("img/Spotify_Icon_RGB_White.png", className);
+
   }
 
   getImage(imageName, className) {
@@ -84,15 +85,15 @@ class NPOS_DomBuilder {
   getPlayingContent(context) {
     let content = document.createElement("div");
 
-    if (this.config.showCoverArt) {
+    /*if (this.config.showCoverArt) {
       content.appendChild(this.getCoverArtDiv(context.imgURL));
     } else {
       content.appendChild(this.getIconImage("NPOS_logoImage"));
-    }
+    }*/
 
     content.appendChild(this.getInfoDiv("fa fa-music", context.songTitle));
     content.appendChild(this.getInfoDiv("fa fa-user", context.artist));
-    content.appendChild(this.getInfoDiv("fa fa-folder", context.album));
+    //content.appendChild(this.getInfoDiv("fa fa-folder", context.album));
     content.appendChild(
       this.getInfoDiv(
         this.getPlayStatusIcon(context.isPlaying),
@@ -136,7 +137,7 @@ class NPOS_DomBuilder {
     return infoDiv;
   }
 
-  getCoverArtDiv(coverURL) {
+  /*getCoverArtDiv(coverURL) {
     let coverArea = document.createElement("div");
     coverArea.className = "NPOS_coverArtArea";
 
@@ -147,7 +148,7 @@ class NPOS_DomBuilder {
     coverArea.appendChild(cover);
 
     return coverArea;
-  }
+  }*/
 
   getPlayStatusIcon(isPlaying) {
     return isPlaying ? "fa fa-play" : "fa fa-pause";
