@@ -51,20 +51,32 @@ let config = {
 		},
 		{
 			module: "calendar",
-			header: "US Holidays",
+			header: "Kalender",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
 						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					}
+						url: "https://calendar.google.com/calendar/ical/gustavsoendergaardnybro%40gmail.com/private-fa8197142c8b26e840b1569c78a34dc6/basic.ics"					}
 				]
 			}
 		},
 		{
+			module: "calendar",
+			header: "Kalender",
+			position: "top_left",
+			config: {
+				calendars: [
+					{
+						symbol: "calendar-check",
+						url: "https://calendar.google.com/calendar/ical/gustavsoendergaardnybro%40gmail.com/private-fa8197142c8b26e840b1569c78a34dc6/basic.ics"					}
+				]
+			}
+		},
+		/*{
 			module: "compliments",
 			position: "lower_third"
-		},
+		},*/
 		{
 			module: "weather",
 			position: "top_right",
@@ -122,13 +134,13 @@ let config = {
         		apiKey: 'string'
     		}
 		},
-		{
+		/*{
             module: 'RejseplanenModule',
 			position: "bottom_left",
             config: {
                 // See below for configurable options
             }
-        },
+        },*/
 	]
 };
 
