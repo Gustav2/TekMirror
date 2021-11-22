@@ -497,6 +497,13 @@
     "desc": "Displays the rig infos from [Ethos API](http://ethosdistro.com/)"
   },
   {
+    "longname": "MMM-Flatastic",
+    "id": "joschi27/MMM-Flatastic",
+    "url": "https://github.com/joschi27/MMM-Flatastic",
+    "author": "joschi27",
+    "desc": "Displays information from the [flatastic](https://www.flatastic-app.com/) commune management app"
+  },
+  {
     "longname": "MMM-GoogleFit",
     "id": "amcolash/MMM-GoogleFit",
     "url": "https://github.com/amcolash/MMM-GoogleFit",
@@ -649,6 +656,13 @@
     "url": "https://github.com/mumblebaj/MMM-NewsAPI",
     "author": "mumblebaj",
     "desc": "A [MagicMirror²](https://magicmirror.builders) module to to get news from [NewsAPi.org](https://newsapi.org/)"
+  },
+  {
+    "longname": "MMM-GoogleCalendar",
+    "id": "randomBrainstormer/MMM-GoogleCalendar",
+    "url": "https://github.com/randomBrainstormer/MMM-GoogleCalendar",
+    "author": "randomBrainstormer",
+    "desc": "Get your Google Calendars in the shape of MagicMirror's default calendar"
   },
   {
     "longname": "DWD-RealtimeIrishRail",
@@ -1820,6 +1834,13 @@
     "desc": "Display the air quality index for a certain location."
   },
   {
+    "longname": "MMM-AirQualityv2",
+    "id": "cslev/MMM-AirQuality",
+    "url": "https://github.com/cslev/MMM-AirQuality",
+    "author": "cslev",
+    "desc": "Fork from CFenner's repo and extended with a new layout setting to print location data as a header."
+  },
+  {
     "longname": "MMM-Airly",
     "id": "mstarzec386/MMM-Airly",
     "url": "https://github.com/mstarzec386/MMM-Airly",
@@ -2070,6 +2091,13 @@
     "url": "https://github.com/glitch452/MMM-LocalTemperature",
     "author": "glitch452",
     "desc": "Show the temperature and/or humidity from a DHT11, DHT22, or AM2302 sensor"
+  },
+  {
+    "longname": "MMM-loldht22",
+    "id": "cslev/MMM-loldht22",
+    "url": "https://github.com/cslev/MMM-loldht22",
+    "author": "cslev",
+    "desc": "Show the temperature and humidity from a DHT22 sensor. This module uses the loldht_22 library and can work inside a docker container, i.e., when your Magicmirror is inside a docker. Lot of settings can be made for how the temperature/humidity data are shown. Change colors, icons, layout, as well as, define threshold values when icons/colors should change according to the temperature"
   },
   {
     "longname": "MMM-Looko2-aq",
@@ -3484,6 +3512,13 @@
     "url": "https://github.com/Alvinger/MMM-Mashie-Skolmat",
     "author": "Alvinger",
     "desc": "Show school lunch menus from Mashie.com. (based on MMM-Skolmaten with different source for menus)"
+  },
+  {
+    "longname": "MMM-Mattermost",
+    "id": "O5ten/MMM-Mattermost",
+    "url": "https://github.com/O5ten/MMM-Mattermost",
+    "author": "O5ten",
+    "desc": "Show specific messages from mattermost chat. (Similar to MMM-SlackAnnouncements, but not bound to a specific channel)"
   },
   {
     "longname": "MMM-max",
@@ -5297,6 +5332,13 @@
     "url": "https://github.com/AlexanderSalter/MMM-Instagram2020",
     "author": "AlexanderSalter",
     "desc": "This is a module for the [MagicMirror2](https://github.com/MichMich/MagicMirror/tree/develop) for displaying your Instagram photos and comments on your MagicMirror2. It makes use of the new Facebook Instagram Graph API."
+  },
+  {
+    "longname": "MMM-InstagramView",
+    "id": "doctorfree/MMM-InstagramView",
+    "url": "https://gitlab.com/doctorfree/MMM-InstagramView",
+    "author": "doctorfree",
+    "desc": "Display your Instagram photos, videos, multiple media postings, and post description on your MagicMirror. Makes use of the Facebook Instagram Graph API."
   },
   {
     "longname": "MMM-JEOPARDY",
