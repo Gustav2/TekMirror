@@ -145,13 +145,13 @@ let config = {
         		apiKey: 'string'
     		}
 		},
-		/*{
+		{
             module: 'RejseplanenModule',
 			position: "bottom_left",
             config: {
-                // See below for configurable options
+
             }
-        },*/
+        },
 	]
 };
 
