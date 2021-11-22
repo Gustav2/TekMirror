@@ -49,7 +49,7 @@ let config = {
 			module: "clock",
 			position: "top_left"
 		},
-		{
+		/*{
 			module: "calendar",
 			header: "Kalender",
 			position: "top_left",
@@ -60,16 +60,27 @@ let config = {
 						url: "https://calendar.google.com/calendar/ical/gustavsoendergaardnybro%40gmail.com/private-fa8197142c8b26e840b1569c78a34dc6/basic.ics"					}
 				]
 			}
-		},
+		},*/
 		{
 			module: "calendar",
+			colored: true,
+			coloredSymbolOnly: true,
 			header: "Kalender",
 			position: "top_left",
 			config: {
 				calendars: [
 					{
+						color: '#0088FF',
 						symbol: "calendar-check",
-						url: "https://calendar.google.com/calendar/ical/gustavsoendergaardnybro%40gmail.com/private-fa8197142c8b26e840b1569c78a34dc6/basic.ics"					}
+						url: "https://calendar.google.com/calendar/ical/ql1a1vhqpgjld6gn9ffgg31lio%40group.calendar.google.com/private-65db6b4932e93d39416af137f0e99a6d/basic.ics",
+
+					},
+					{
+						color: '#0088FF',
+						symbol: "calendar",
+						url: "https://calendar.google.com/calendar/ical/daniel.nettelfield%40gmail.com/private-2a29846d06bbd973b1c9ec42488c0b09/basic.ics",
+
+					}
 				]
 			}
 		},
