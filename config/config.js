@@ -69,7 +69,7 @@ let config = {
 			coloredSymbolOnly: true,
 			header: "Kalender",
 			position: "top_left",
-			classes: 'daniel',
+			classes: 'gustav',
 			config: {
 				calendars: [
 					{
@@ -132,7 +132,7 @@ let config = {
 		{
 		  	module: "MMM-NowPlayingOnSpotify",
 		  	position: "top_right",
-
+			classes: 'gustav',
 		  	config: {
 				showCoverArt: false,
 				clientID: "64c94fd8664d4ca684734ce35c867dd1",
