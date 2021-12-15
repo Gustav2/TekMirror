@@ -44,12 +44,12 @@ let config = {
 		{
 			module: "updatenotification",
 			position: "top_bar",
-			classes: always,
+			classes: 'always',
 		},
 		{
 			module: "clock",
 			position: "top_left",
-			classes: always,
+			classes: 'always',
 		},
 		/*{
 			module: "calendar",
@@ -90,7 +90,7 @@ let config = {
 				{
 			module: "weather",
 			position: "top_right",
-			classes: always,
+			classes: 'always',
 			config: {
 				weatherProvider: "openweathermap",
 				type: "current",
@@ -102,7 +102,7 @@ let config = {
 		{
 			module: "weather",
 			position: "top_right",
-			classes: always,
+			classes: 'always',
 			header: "Weather Forecast",
 			config: {
 				weatherProvider: "openweathermap",
@@ -115,7 +115,7 @@ let config = {
 		{
 			module: "newsfeed",
 			position: "bottom_center",
-			classes: gustav,
+			classes: 'gustav',
 			config: {
 				feeds: [
 					{
