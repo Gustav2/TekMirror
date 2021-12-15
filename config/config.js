@@ -43,11 +43,13 @@ let config = {
 		},
 		{
 			module: "updatenotification",
-			position: "top_bar"
+			position: "top_bar",
+			classes: always,
 		},
 		{
 			module: "clock",
-			position: "top_left"
+			position: "top_left",
+			classes: always,
 		},
 		/*{
 			module: "calendar",
@@ -85,13 +87,10 @@ let config = {
 				]
 			}
 		},
-		/*{
-			module: "compliments",
-			position: "lower_third"
-		},*/
-		{
+				{
 			module: "weather",
 			position: "top_right",
+			classes: always,
 			config: {
 				weatherProvider: "openweathermap",
 				type: "current",
@@ -103,6 +102,7 @@ let config = {
 		{
 			module: "weather",
 			position: "top_right",
+			classes: always,
 			header: "Weather Forecast",
 			config: {
 				weatherProvider: "openweathermap",
@@ -115,6 +115,7 @@ let config = {
 		{
 			module: "newsfeed",
 			position: "bottom_center",
+			classes: gustav,
 			config: {
 				feeds: [
 					{
@@ -158,7 +159,7 @@ let config = {
 			config: {
 			  // Logout 15 seconds after user was not detected any more
 			  // If they are detected within this period, the delay will start again
-			  logoutDelay: 15000,
+			  logoutDelay: 30000,
 			  // How often the recognition starts in milliseconds
 			  // With a Raspberry Pi 3+ it works well every 2 seconds
 			  checkInterval: 2000,
