@@ -51,9 +51,10 @@ let config = {
 			position: "top_left",
 			classes: 'always',
 		},
-		/*{
+		{
 			module: "calendar",
 			header: "Kalender",
+			classes: 'Gustav',
 			position: "top_left",
 			config: {
 				calendars: [
@@ -62,14 +63,14 @@ let config = {
 						url: "https://calendar.google.com/calendar/ical/gustavsoendergaardnybro%40gmail.com/private-fa8197142c8b26e840b1569c78a34dc6/basic.ics"					}
 				]
 			}
-		},*/
+		},
 		{
 			module: "calendar",
 			colored: true,
 			coloredSymbolOnly: true,
 			header: "Kalender",
 			position: "top_left",
-			classes: 'gustav',
+			classes: 'always',
 			config: {
 				calendars: [
 					{
@@ -115,7 +116,7 @@ let config = {
 		{
 			module: "newsfeed",
 			position: "bottom_center",
-			classes: 'gustav',
+			classes: 'always',
 			config: {
 				feeds: [
 					{
@@ -132,7 +133,7 @@ let config = {
 		{
 		  	module: "MMM-NowPlayingOnSpotify",
 		  	position: "top_right",
-			classes: 'gustav',
+			classes: 'Gustav',
 		  	config: {
 				showCoverArt: false,
 				clientID: "64c94fd8664d4ca684734ce35c867dd1",
@@ -159,7 +160,7 @@ let config = {
 			config: {
 			  // Logout 15 seconds after user was not detected any more
 			  // If they are detected within this period, the delay will start again
-			  logoutDelay: 30000,
+			  logoutDelay: 15000,
 			  // How often the recognition starts in milliseconds
 			  // With a Raspberry Pi 3+ it works well every 2 seconds
 			  checkInterval: 2000,
