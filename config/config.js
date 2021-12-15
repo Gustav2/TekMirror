@@ -213,7 +213,7 @@ let config = {
 			  // How much distance between faces to consider it a match. Lower is more strict.
 			  tolerance: 0.6,
 			  // allow multiple concurrent user logins, 0=no, any other number is the maximum number of concurrent logins
-			  multiUser: 0,
+			  multiUser: 2,
 			}
 		}
 	]
