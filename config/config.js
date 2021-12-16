@@ -149,9 +149,15 @@ let config = {
             module: 'RejseplanenModule',
 			position: "bottom_left",
             config: {
-
             }
         },
+		// {
+        //     module: 'RejseplanenModule',
+		// 	position: "bottom_left",
+        //     config: {
+
+        //     }
+        // },
 	]
 };
 
