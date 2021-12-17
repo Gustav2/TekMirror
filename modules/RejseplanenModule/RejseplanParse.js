@@ -4,6 +4,8 @@ let toRy = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=955014
 let fromSpice = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9512079&originCoordY=56178240&originCoordName=Hjem&destCoordX=9550145&destCoordY=56166726&destCoordName=College360&useBus=1&format=json"
 let toSpice = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9550145&originCoordY=56166726&originCoordName=College360&destCoordX=9512079&destCoordY=56178240&destCoordName=Hjem&useBus=0&format=json"
 
+const fs = require('fs');
+
 function rejseplan(url, trainOnly) {
     const request = require('request');
     let options = { json: true };
@@ -59,10 +61,24 @@ function rejseplan(url, trainOnly) {
                 }
             });
         }
-        console.log(output);
-        return output;
+        //console.log(output);
+        //return output;
+		fs.writeFile('test.txt', output, err => {
+		  if (err) {
+			console.error(err)
+		  }
+		  //file written successfully
+		})
     });
 }
 
-var out = rejseplan(toRy, true);
-console.log(out);
+rejseplan(fromSpice, false);
+
+fs.readFile('test.txt', 'utf8', (err, data) => {
+	if (err) throw err;
+	console.log(data);
+});
+
+//var out = rejseplan(toRy, true);
+//console.log(out);
+

@@ -1,0 +1,5 @@
+Bus fra: Risumvej/Eidervej (Silkeborg Kom)
+Mod: Søndertorv (Silkeborg Kom)
+Retning: Silkeborg Trafikterminal
+Kl: 09:41
+Ankomst: 09:52
