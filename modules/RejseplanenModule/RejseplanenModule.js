@@ -1,5 +1,6 @@
 let jsonData = "Hej";
-
+const fs = require('fs');
+const {data} = require("grunt/lib/grunt/config");
 /*
 const fetch = require('node-fetch');
 
@@ -74,7 +75,11 @@ Module.register("RejseplanenModule",{
 		var wrapper = document.createElement("div");
 		// wrapper.innerHTML = this.config.text;
 		// wrapper.innerHTML = "Tog fra: Ry St.\nMod: Silkeborg St.\nSpor: 1\nKl: 13:69";
-		wrapper.innerHTML = rejseplan("https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9550145&originCoordY=56166726&originCoordName=College360&destCoordX=9783200&destCoordY=56082440&destCoordName=Hjem&useBus=0&format=json", true);
+		fs.readFile('test.txt', 'utf8', (err, data) => {
+			if (err) throw err;
+			console.log(data);
+		});
+		wrapper.innerHTML = data
 		return wrapper;
 	}
 });
