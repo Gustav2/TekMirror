@@ -70,14 +70,11 @@ function rejseplan(url, trainOnly) {
 		  //file written successfully
 		})
     });
+    var global_data = fs.readFileSync("test.txt").toString();
+    return global_data;
 }
 
-rejseplan(fromSpice, false);
-
-fs.readFile('test.txt', 'utf8', (err, data) => {
-	if (err) throw err;
-	console.log(data);
-});
+console.log(rejseplan(fromSpice, false));
 
 //var out = rejseplan(toRy, true);
 //console.log(out);
