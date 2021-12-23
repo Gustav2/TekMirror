@@ -4,77 +4,78 @@ let toRy = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=955014
 let fromSpice = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9512079&originCoordY=56178240&originCoordName=Hjem&destCoordX=9550145&destCoordY=56166726&destCoordName=College360&useBus=1&format=json"
 let toSpice = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9550145&originCoordY=56166726&originCoordName=College360&destCoordX=9512079&destCoordY=56178240&destCoordName=Hjem&useBus=0&format=json"
 
+const { response } = require('express');
 const fs = require('fs');
 
-function rejseplan(url, trainOnly) {
+function getJSON(url, callback) {
     const request = require('request');
     let options = { json: true };
-    var req = request(url, options, (error, res, body) => {
-        if (error) {
-            return console.log(error)
-        };
-        if (!error && res.statusCode == 200 && trainOnly) {
-            console.log(body["TripList"]["Trip"][0]["Leg"])
-            body["TripList"]["Trip"][0]["Leg"].forEach(trip => {
-                if (trip.type == "REG") {
-                    output = `Tog fra: ${trip["Origin"]["name"]}\n`
-                    output += `Til: ${trip["Destination"]["name"]}\n`
-                    output += `${trip["Notes"]["text"].split(";")[0]}\n`
-                    output += `Spor: ${trip["Origin"]["rtTrack"]}\n`
-                    if (trip.rtTime) {
-                        output += `Kl: <strike>${trip["Origin"]["time"]}</strike>\n`
-                        output += `Kl: ${trip["Origin"]["rtTime"]}`
-                    }
-                    else {
-                        output += `Kl: ${trip["Origin"]["time"]}\n`
-                    }
-                    if (trip["Destination"]["rtTime"]) {
-                        output += `Ankomst: <strike>${trip["Destination"]["time"]}</strike>\n`
-                        output += `Ankomst: ${trip["Destination"]["rtTime"]}\n`
-                    }
-                    else {
-                        output += `Ankomst: ${trip["Destination"]["time"]}\n`
-                    }
-                }
-            });
+    request(url, options, (error, res, body) => {
+        if (!error && res.statusCode == 200){
+            callback(body);
         }
-        if (!error && res.statusCode == 200 && !trainOnly) {
-            body["TripList"]["Trip"][0]["Leg"].forEach(trip => {
-                if (trip.type == "BUS") {
-                    output = `Bus fra: ${trip["Origin"]["name"]}\n`
-                    output += `Mod: ${trip["Destination"]["name"]}\n`
-                    output += `${trip["Notes"]["text"].split(";")[0]}\n`
-                    if (trip.rtTime) {
-                        output += `Kl: <strike>${trip["Origin"]["time"]}</strike>\n`
-                        output += `Kl: ${trip["Origin"]["rtTime"]}\n`
-                    }
-                    else {
-                        output += `Kl: ${trip["Origin"]["time"]}\n`
-                    }
-                    if (trip["Destination"]["rtTime"]) {
-                        output += `Ankomst: <strike>${trip["Destination"]["time"]}</strike>\n`
-                        output += `Ankomst: ${trip["Destination"]["rtTime"]}\n`
-                    }
-                    else {
-                        output += `Ankomst: ${trip["Destination"]["time"]}\n`
-                    }
-                }
-            });
+        else{
+            console.log(error);
         }
-        //console.log(output);
-        //return output;
-		fs.writeFile('test.txt', output, err => {
-		  if (err) {
-			console.error(err)
-		  }
-		  //file written successfully
-		})
     });
-    var global_data = fs.readFileSync("test.txt").toString();
-    return global_data;
 }
 
-console.log(rejseplan(fromSpice, false));
+function parseJSON(trainOnly){
+    if (trainOnly) {
+        console.log(body["TripList"]["Trip"][0]["Leg"])
+        body["TripList"]["Trip"][0]["Leg"].forEach(trip => {
+            if (trip.type == "REG") {
+                output = `Tog fra: ${trip["Origin"]["name"]}\n`
+                output += `Til: ${trip["Destination"]["name"]}\n`
+                output += `${trip["Notes"]["text"].split(";")[0]}\n`
+                output += `Spor: ${trip["Origin"]["rtTrack"]}\n`
+                if (trip.rtTime) {
+                    output += `Kl: <strike>${trip["Origin"]["time"]}</strike>\n`
+                    output += `Kl: ${trip["Origin"]["rtTime"]}`
+                }
+                else {
+                    output += `Kl: ${trip["Origin"]["time"]}\n`
+                }
+                if (trip["Destination"]["rtTime"]) {
+                    output += `Ankomst: <strike>${trip["Destination"]["time"]}</strike>\n`
+                    output += `Ankomst: ${trip["Destination"]["rtTime"]}\n`
+                }
+                else {
+                    output += `Ankomst: ${trip["Destination"]["time"]}\n`
+                }
+            }
+        });
+    }
+    if (!trainOnly) {
+        body["TripList"]["Trip"][0]["Leg"].forEach(trip => {
+            if (trip.type == "BUS") {
+                output = `Bus fra: ${trip["Origin"]["name"]}\n`
+                output += `Mod: ${trip["Destination"]["name"]}\n`
+                output += `${trip["Notes"]["text"].split(";")[0]}\n`
+                if (trip.rtTime) {
+                    output += `Kl: <strike>${trip["Origin"]["time"]}</strike>\n`
+                    output += `Kl: ${trip["Origin"]["rtTime"]}\n`
+                }
+                else {
+                    output += `Kl: ${trip["Origin"]["time"]}\n`
+                }
+                if (trip["Destination"]["rtTime"]) {
+                    output += `Ankomst: <strike>${trip["Destination"]["time"]}</strike>\n`
+                    output += `Ankomst: ${trip["Destination"]["rtTime"]}\n`
+                }
+                else {
+                    output += `Ankomst: ${trip["Destination"]["time"]}\n`
+                }
+            }
+        });
+    }
+}
+
+getJson(fromRy, function(data) {
+    console.log(data)
+});
+
+console.log(getJSON(fromRy));
 
 //var out = rejseplan(toRy, true);
 //console.log(out);
