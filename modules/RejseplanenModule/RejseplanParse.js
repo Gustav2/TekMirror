@@ -4,9 +4,6 @@ let toRy = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=955014
 let fromSpice = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9512079&originCoordY=56178240&originCoordName=Hjem&destCoordX=9550145&destCoordY=56166726&destCoordName=College360&useBus=1&format=json"
 let toSpice = "https://xmlopen.rejseplanen.dk/bin/rest.exe/trip?originCoordX=9550145&originCoordY=56166726&originCoordName=College360&destCoordX=9512079&destCoordY=56178240&destCoordName=Hjem&useBus=0&format=json"
 
-
-const { from } = require('form-data');
-const { overArgs } = require('lodash');
 const request = require('sync-request');
 
 function getJSON(url){
